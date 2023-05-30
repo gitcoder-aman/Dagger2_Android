@@ -8,4 +8,6 @@ import dagger.Component
 interface MainViewModelInjector {
     //also called component
     fun getMainViewModel(): MainViewModel? //top level factory
+
+    fun injectFields(mainActivity: KotlinMainActivity)
 }

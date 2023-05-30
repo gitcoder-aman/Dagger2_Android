@@ -4,11 +4,12 @@ import javax.inject.Inject;
 
 public class NetworkClient {
 
-    public NetworkConnection mConnection;
+    @Inject
+     NetworkConnection mConnection;
 
     @Inject
-    public NetworkClient(NetworkConnection networkConnection){
-        mConnection = networkConnection;
+    public NetworkClient(){
+//        mConnection = networkConnection;
     }
     public String fetchData(){
         return mConnection.doReq();

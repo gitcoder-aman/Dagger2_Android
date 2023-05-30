@@ -7,10 +7,12 @@ import com.tech.dagger2_android.inKotlin.basic.MainViewModel
 import com.tech.dagger2_android.databinding.ActivityMainBinding
 import com.tech.dagger2_android.inKotlin.di.DaggerMainViewModelInjector
 import com.tech.dagger2_android.inKotlin.utils.Constants
+import javax.inject.Inject
 
 class KotlinMainActivity : AppCompatActivity() {
 
-    private lateinit var mMainViewModel: MainViewModel
+    @Inject
+    lateinit var mMainViewModel: MainViewModel  //here is field injector
     private lateinit var binding : ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +27,9 @@ class KotlinMainActivity : AppCompatActivity() {
 //        mMainViewModel = MainViewModel(client)
 
         //use dagger
-        mMainViewModel = DaggerMainViewModelInjector.create().getMainViewModel()!!
+//        mMainViewModel = DaggerMainViewModelInjector.create().getMainViewModel()!!
+
+        DaggerMainViewModelInjector.create().injectFields(this)
 
         binding.button.setOnClickListener {
             Log.d(Constants.TAG, "On Create: Data fetched"+ mMainViewModel.fetchData())
