@@ -11,6 +11,7 @@ import com.tech.dagger2_android.databinding.ActivityMainBinding;
 import com.tech.dagger2_android.inJava.basic.MainViewModel;
 import com.tech.dagger2_android.inJava.utils.Constants;
 import com.tech.dagger2_android.inJava.di.DaggerMainViewModelInjector;
+
 import javax.inject.Inject;
 
 public class JavaMainActivity extends AppCompatActivity {
